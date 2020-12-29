@@ -4,26 +4,26 @@
 * resrt
 * **************************************************************/
 html {
-  color: #333;
-  font-size: 62.5%;
+	font-size: 62.5%;
+	color: #333;
 }
 
 input[type="text"] {
-  padding: 2px;
-  font: menu;
-  border: solid #aaa 1px;
-  border-radius: 15px;
+	padding: 2px;
+	font: menu;
+	border: solid #aaa 1px;
+	border-radius: 15px;
 }
 
 input[type="text"]:focus {
-  outline: none;
+	outline: none;
 }
 
 img {
-  max-width: 100%;
-  vertical-align: bottom;
+	max-width: 100%;
+	vertical-align: bottom;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }

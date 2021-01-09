@@ -1,9 +1,8 @@
-
 @charset "UTF-8";
+
 /* # ************************************************************
 * resrt
 * **************************************************************/
-
 html{
 	color: #333;
 	font-size: 62.5%;
@@ -23,4 +22,31 @@ img{
 }
 ul{
 	list-style: none;
+}
+
+/* # ************************************************************
+* title
+* **************************************************************/
+.tllvl1,
+.tllvl2,
+.tllvl3,
+.tllvl4{
+	line-height: 1.5;
+	font-weight: bold;
+}
+.tllvl1{
+	font-size: 2.2rem;
+}
+.tllvl2{
+	font-size: 1.8rem;
+}
+.tllvl3{
+	font-size: 1.6rem;
+}
+.tllvl4{
+	font-size: 1.4rem;
+}
+.tll--btLine{
+	padding-bottom: 0.5rem;
+	border-bottom: solid 1px #aaa;
 }

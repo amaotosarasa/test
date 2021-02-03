@@ -27,6 +27,7 @@
 
 .section01{
 	margin-top: 45px;
+	margin-bottom: 60px;
 }
 
 .section_inr{
@@ -35,7 +36,6 @@
 }
 
 /* txtBox */
-
 
 .txtBox{
 	margin-top: 25px;
@@ -66,7 +66,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	.txtBox__txtList{
 		margin: 0 auto;
 		padding: 0 20px;

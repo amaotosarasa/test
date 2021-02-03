@@ -31,12 +31,12 @@
 			}
 		});
 	}
-	// 幅が768px以上のビューポートをターゲットとする条件を作成
-	const mediaQuery = window.matchMedia('(min-width: 768px)')
+	// 幅が767px以上のビューポートをターゲットとする条件を作成
+	const mediaQuery = window.matchMedia('(min-width: 767px)')
 
 	function handleTabletChange(e) {
 		if (e.matches) {
-			autoHeight(jsHeightEle, 3);
+			autoHeight(jsHeightEle);
 		} else {
 			jsHeightEle.forEach(function (elem, index) {
 				elem.removeAttribute('style');
@@ -49,5 +49,4 @@
 
 	// 初期チェック
 	handleTabletChange(mediaQuery)
-
 }());

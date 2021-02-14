@@ -41,13 +41,13 @@ ul {
 }
 
 .titleArea__inr .tllvl1--boder {
+	border-style: solid;
 	border-bottom: solid 1px;
-	-webkit-border-image: -webkit-gradient(linear, left top, right top, color-stop(40%, #0089ff), color-stop(0%, #333));
-	-webkit-border-image: -webkit-linear-gradient(left, #0089ff 40%, #333 0%);
-	-o-border-image: linear-gradient(to right, #0089ff 40%, #333 0%);
-	border-image: -webkit-gradient(linear, left top, right top, color-stop(40%, #0089ff), color-stop(0%, #333));
-	border-image: linear-gradient(to right, #0089ff 40%, #333 0%);
-	border-image-slice: 1;
+	-webkit-border-image: -webkit-gradient(linear, left top, right top, color-stop(40%, #0089ff), color-stop(0%, #333)) 1/0 0 1px 0;
+	-webkit-border-image: -webkit-linear-gradient(left, #0089ff 40%, #333 0%) 1/0 0 1px 0;
+	-o-border-image: linear-gradient(to right, #0089ff 40%, #333 0%) 1/0 0 1px 0;
+	border-image: -webkit-gradient(linear, left top, right top, color-stop(40%, #0089ff), color-stop(0%, #333)) 1/0 0 1px 0;
+	border-image: linear-gradient(to right, #0089ff 40%, #333 0%) 1/0 0 1px 0;
 }
 
 .tllvl1,

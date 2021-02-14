@@ -4,6 +4,11 @@
 	const jsTabTitle = document.querySelectorAll('.tab_title_block');
 	jsTabTitle.forEach(element => {
 		element.addEventListener('click', function (e) {
+			// 親要素をクリックしたときに処理を中断
+			// コンソール上のエラー防止
+			if(e.target.classList.contains('tab_title_block')){
+				return
+			}
 			const
 				child = this.children,
 				childLength = child.length,

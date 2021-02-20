@@ -14,9 +14,8 @@
 			padding-bottom: 8px;
 		}
 		.tllvl1--boder{
-			border-bottom: solid 1px;
-			border-image: linear-gradient(to right, #0089ff 40%, #333 0%);
-			border-image-slice: 1;
+			border-image: linear-gradient(to right, #0089ff 40%, #333 0%) 1/0 0 1px 0;
+			border-style: solid;
 		}
 	}
 }

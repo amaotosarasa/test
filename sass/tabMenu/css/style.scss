@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* # ************************************************************
+* tabMenu
+* **************************************************************/
+
+.tab_Block{
+	margin-top: 30px;
+	.tab_title_block.item >.tab_title{
+		width: calc( 100% / 2 );
+	}
+	.tab_title_block.item3 >.tab_title{
+		width: calc( 100% / 3 );
+	}
+	.tab_title_block{
+		display: flex;
+		>.tab_title{
+			padding: 15px;
+			text-align: center;
+			background: rgb(173, 255, 241);
+			border-radius: 15px 15px 0 0;
+			transition: 0.4s;
+			cursor: pointer;
+			&:hover{
+				background: #fdd;
+			}
+		}
+		>.tab_title:not(:first-child){
+			margin-left: 5px;
+		}
+		.tab_title.tab-active{
+			background: #fdd;
+		}
+	}
+	.tab_cont{
+		margin-top: -2px;
+		padding: 20px;
+		border: solid 2px #ccc;
+		>.tab_Item:not(:first-child){
+			display: none;
+		}
+	}
+}

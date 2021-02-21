@@ -11,7 +11,9 @@
 		"gulp-header": "^2.0.9",
 		"gulp-postcss": "^9.0.0",
 		"gulp-replace": "^1.0.0",
-		"gulp-sass": "^4.1.0"
+		"gulp-sass": "^4.1.0",
+		"jshint": "^2.12.0",
+		"postcss": "^8.2.6"
 	},
 	"browserslist": [
 		"last 2 versions",

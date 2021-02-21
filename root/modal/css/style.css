@@ -9,22 +9,72 @@
 	display: flex;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	margin-top: 45px;
+	margin-left: -62px;
 }
 
 .imgList .imgList__item {
 	max-width: 300px;
-	cursor: pointer;
-}
-
-.imgList .imgList__item:not(:nth-child(3n+1)) {
-	margin-left: 62px;
-}
-
-.imgList .imgList__item:nth-child(n+4) {
 	margin-top: 30px;
+	margin-left: 62px;
+	cursor: pointer;
 }
 
 /* # ************************************************************
 * modal
 * **************************************************************/
+.modal {
+	position: fixed;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100vh;
+}
+
+.modal .modal__bg {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.modal .modal__bg .modal__contents {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 30px;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background: #fff;
+}
+
+.modal .modal__bg .modal--close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.modal .modal__bg .modal--close::before,
+.modal .modal__bg .modal--close::after {
+	position: absolute;
+	top: 5px;
+	right: 14px;
+	display: block;
+	width: 1px;
+	height: 20px;
+	content: "";
+	background: #FFF;
+}
+
+.modal .modal__bg .modal--close::before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.modal .modal__bg .modal--close::after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}

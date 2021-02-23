@@ -14,20 +14,18 @@
 			createEle = document.createElement('div');
 		
 		// モーダル用のDOM要素を作成
-		createEle.classList.add('modal');
+		createEle.classList.add('modal','fadeIn');
 		createEle.innerHTML = 
 			`
-			<div class="modal">
-				<div class="modal__bg">
-					<div class="modal__contents">
-						<span class="modal--close"></span>
-						<div class="modal__img">
-							<img src="${targetGetAttrSrc}" alt="${targetGetAttrAlt}">
-						</div>
-						<p>${targetGetAttrAlt}</p>
+			<div class="modal__bg">
+				<div class="modal__contents">
+					<span class="modal--close"></span>
+					<div class="modal__img">
+						<img src="${targetGetAttrSrc}" alt="${targetGetAttrAlt}">
 					</div>
+					<p>${targetGetAttrAlt}</p>
 				</div>
-			</div> 
+			</div>
 			`;
 		document.body.appendChild(createEle);
 	};
@@ -43,7 +41,13 @@
 			if(target.getAttribute('class') === 'modal__bg' || target.getAttribute('class') === 'modal--close'){
 				// 取得したクラスがmodal__bgもしくはmodal--closeであれば処理を開始
 				// モーダルの削除
-				document.getElementsByClassName('modal')[0].remove();
+				const modal = document.getElementsByClassName('modal')[0];
+
+				// CSSアニメーション後に時間差で要素を削除
+				modal.classList.add('fadeIn--rev');
+				setTimeout(()=>{
+					modal.remove();
+				},1000);
 			}
 	};
 	

@@ -4,21 +4,34 @@
 * layout
 * **************************************************************/
 
-.imgList{
-	display: flex;
-	flex-wrap: wrap;
-	margin-left: -62px;
-	.imgList__item{
-		max-width: 300px;
-		margin-top: 30px;
-		margin-left: 62px;
-		cursor: pointer;
+.item__block{
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	@media (min-width:641px) {
+		padding: 0;
+	}
+	.imgList{
+		display: flex;
+		flex-wrap: wrap;
+		@media (min-width:641px)  {
+			margin-left: -62px;
+		}
+		.imgList__item{
+			margin-top: 30px;
+			cursor: pointer;
+			@media (min-width:641px) {
+				max-width: 300px;
+				margin-left: 62px;
+			}
+		}
 	}
 }
 
 /* # ************************************************************
 * modal
 * **************************************************************/
+
 
 .modal{
 	position: fixed;

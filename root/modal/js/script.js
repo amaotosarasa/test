@@ -23,7 +23,7 @@
 					<div class="modal__img">
 						<img src="${targetGetAttrSrc}" alt="${targetGetAttrAlt}">
 					</div>
-					<p>${targetGetAttrAlt}</p>
+					<p class="modal__txt">${targetGetAttrAlt}</p>
 				</div>
 			</div>
 			`;

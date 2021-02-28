@@ -1,49 +1,71 @@
 @charset "UTF-8";
 
-.item__block {
+/* # ************************************************************
+* layout
+* **************************************************************/
+.item__block{
 	max-width: 100%;
 	margin: 0 auto;
-	padding: 20px;
-}.item__block .imgList {
+}
+.item__block .imgList{
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-}.item__block .imgList .imgList__item {
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+.item__block .imgList__item{
 	margin-top: 30px;
 	cursor: pointer;
-}.modal {
+}
+
+/* # ************************************************************
+* modal
+* **************************************************************/
+.modal{
 	position: fixed;
-	z-index: 10;
+	z-index: 10; 
 	top: 0;
 	display: block;
 	width: 100%;
 	height: 100vh;
-}.modal .modal__bg {
+}
+.modal__bg{
 	position: absolute;
-	z-index: 15;
+	z-index: 15; 
 	width: 100%;
 	height: 100vh;
-	background: rgba(0,0,0,0.8);
-}.modal .modal__bg .modal__contents {
+	background: rgba(0, 0, 0, 0.8);
+}
+.modal__bg .modal__contents{
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	width: 80%;
 	padding: 30px;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+	text-align: center;
+	border-radius: 14px; 
 	background: #fff;
-}.modal .modal__bg .modal--close {
+}
+.modal__bg .modal__contents .modal__txt{
+	margin-top: 1em;
+	font-size: 1.4rem;
+}
+.modal__bg .modal--close{
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: -1px;
+	right: -1px;
 	width: 30px;
 	height: 30px;
-	border-radius: 15px;
-	background: rgba(0,0,0,0.7);
-}.modal .modal__bg .modal--close::before,
-.modal .modal__bg .modal--close::after {
+	border-radius: 15px; 
+	background: rgba(0, 0, 0, 0.7);
+}
+.modal__bg .modal--close::before,
+.modal__bg .modal--close::after{
 	position: absolute;
 	top: 5px;
 	right: 14px;
@@ -52,42 +74,62 @@
 	height: 20px;
 	content: "";
 	background: #FFF;
-}.modal .modal__bg .modal--close::before {
+}
+.modal__bg .modal--close::before{
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
-}.modal .modal__bg .modal--close::after {
+}
+.modal__bg .modal--close::after{
 	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-}@-webkit-keyframes fadeAnime {
-	0% {
-		opacity: 0;
-	}100% {
-		opacity: 1;
-	}
-}@keyframes fadeAnime {
-	0% {
-		opacity: 0;
-	}100% {
-		opacity: 1;
-	}
-}@-webkit-keyframes fadeAnimeRev {
-	0% {
-		opacity: 1;
-	}100% {
+}
+
+/* ==============================================================
+* Animation 
+* =============================================================*/
+@-webkit-keyframes fadeAnime{
+	0%{
 		opacity: 0;
 	}
-}@keyframes fadeAnimeRev {
-	0% {
+	100%{
 		opacity: 1;
-	}100% {
+	}
+}
+@keyframes fadeAnime{
+	0%{
 		opacity: 0;
 	}
-}.fadeIn {
+	100%{
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeAnimeRev{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes fadeAnimeRev{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+.fadeIn{
 	-webkit-animation-name: fadeAnime;
 	animation-name: fadeAnime;
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
-}.fadeIn--rev {
+}
+
+.fadeIn--rev{
 	-webkit-animation-name: fadeAnimeRev;
 	animation-name: fadeAnimeRev;
 	-webkit-animation-duration: 1s;
@@ -95,15 +137,11 @@
 
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
-}@media (min-width: 641px) {
-	.item__block {
-		padding: 0;
-	}
-	.item__block .imgList {
-		margin-left: -62px;
-	}
-	.item__block .imgList .imgList__item {
-		max-width: 300px;
-		margin-left: 62px;
+}
+
+@media (min-width: 641px){
+	.item__block .imgList__item{
+		max-width: 320px;
+		padding: 0 10px;
 	}
 }

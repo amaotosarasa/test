@@ -16,7 +16,7 @@ sass.compiler = require('node-sass');
 gulp.task('sass', function () {
 	return gulp.src('sass/**/*.scss')
 		.pipe(sass({
-			outputStyle: 'compressed' // コメント削除のため圧縮形式で出力 cssconbでフォーマットは整形
+			outputStyle: 'compac' // コメント削除のため圧縮形式で出力 cssconbでフォーマットは整形
 		}).on('error', sass.logError))
 		.pipe(replace(/@charset "UTF-8";/g, '')) // charsetの検索
 		.pipe(header('@charset "UTF-8";\n\n')) // charsetの挿入

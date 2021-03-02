@@ -98,6 +98,11 @@ ul{
 	max-width: 1024px;
 	margin: 0 auto;
 }
+
+.section03{
+	margin-top: 30px;
+}
+
 @media (min-width: 641px){
 	.titleArea{
 		margin-top: 60px;

@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-/* # ************************************************************
-* layout
-* **************************************************************/
 .item__block{
 	max-width: 100%;
 	margin: 0 auto;
@@ -21,9 +18,38 @@
 	cursor: pointer;
 }
 
-/* # ************************************************************
-* modal
-* **************************************************************/
+.youtube__Block{
+	max-width: 640px;
+	margin: 0 auto;
+}
+.youtube__Block .youtube__inr{
+	position: relative;
+	width: 100%;
+	padding-top: 56.25%;
+}
+.youtube__Block .youtube__inr iframe{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.btn{
+	max-width: 320px;
+	padding: 15px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	cursor: pointer; 
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	text-align: center;
+	color: #fff;
+	border: solid 2px #ff3535;
+	border-radius: 8px;
+	background: #ff3535;
+}
+
 .modal{
 	position: fixed;
 	z-index: 10; 
@@ -84,9 +110,6 @@
 	transform: rotate(-45deg);
 }
 
-/* ==============================================================
-* Animation 
-* =============================================================*/
 @-webkit-keyframes fadeAnime{
 	0%{
 		opacity: 0;
@@ -95,6 +118,7 @@
 		opacity: 1;
 	}
 }
+
 @keyframes fadeAnime{
 	0%{
 		opacity: 0;
@@ -143,5 +167,14 @@
 	.item__block .imgList__item{
 		max-width: 320px;
 		padding: 0 10px;
+	}
+	.btn{
+		margin: 20px auto 0;
+	}
+	.btn:hover{
+		color: #ff3535;
+		background: #fff;
+		-webkit-box-shadow: 8px 6px 9px 0 rgba(0, 0, 0, 0.5);
+		box-shadow: 8px 6px 9px 0 rgba(0, 0, 0, 0.5);
 	}
 }

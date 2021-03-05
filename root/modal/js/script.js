@@ -1,4 +1,24 @@
 
+	/**
+	 * youtubeAPI function化
+	 */
+	let player;
+	const movie = ()=>{
+		const tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		let firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		// youtube用動画パラメーター
+		window.onYouTubeIframeAPIReady = ()=> {
+			player = new YT.Player('player', {
+				height: '360',
+				width: '640',
+				videoId: 'OG0ZV8SJcNQ',
+			});
+		};
+	};
+
 (function(){
 	'use strict';
 	
@@ -41,10 +61,17 @@
 			if(target.getAttribute('class') === 'modal__bg' || target.getAttribute('class') === 'modal--close'){
 				// 取得したクラスがmodal__bgもしくはmodal--closeであれば処理を開始
 				// モーダルの削除
-				const modal = document.getElementsByClassName('modal')[0];
-
+				const modal = document.getElementsByClassName('modal')[0] || document.getElementById('modal--youtube');
+				
 				// CSSアニメーション後に時間差で要素を削除
 				modal.classList.add('fadeIn--rev');
+				if(modal === document.getElementById('modal--youtube')){
+					modal.style.display = 'none';
+					modal.classList.remove('fadeIn','fadeIn--rev');
+					movie();
+					player.pauseVideo();
+					return false;
+				}
 				setTimeout(()=>{
 					modal.remove();
 				},1000);
@@ -59,10 +86,17 @@
 		});
 	});
 
+	// youtube用モーダルクリック処理
+	document.getElementById('testClick').addEventListener('click',()=>{
+		const modalYoutube = document.getElementById('modal--youtube');
+		modalYoutube.style.display = 'block';
+		modalYoutube.classList.add('fadeIn');
+		movie();
+	});
+
 	// モーダル削除時のクリック処理
 	// 動的処理のDOM要素なので全体にクリック処理をかける。
 	document.addEventListener('click', (e)=>{
 		removeMmodal(e);
 	});
-
 }());

@@ -3,7 +3,7 @@
 	 * youtubeAPI function化
 	 */
 	let player;
-	const movie = ()=>{
+	const movie = (movieNum)=>{
 		const tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";
 		let firstScriptTag = document.getElementsByTagName('script')[0];
@@ -14,14 +14,13 @@
 			player = new YT.Player('player', {
 				height: '360',
 				width: '640',
-				videoId: 'OG0ZV8SJcNQ',
+				videoId: movieNum,
 			});
 		};
 	};
 
 (function(){
 	'use strict';
-	
 	/**
 	 * モーダル出現ポップアップ時の作成処理
 	 * ClickEle クリックイベントの引数を受け取りsrcとaltを読み込む
@@ -69,9 +68,12 @@
 					modal.style.display = 'none';
 					modal.classList.remove('fadeIn','fadeIn--rev');
 					movie();
-					player.pauseVideo();
+					player.pauseVideo(); // 動画一時停止
+					// ポップしたモーダルが、youtubeの場合はここで処置が終了
 					return false;
 				}
+
+				// 通常のモーダルの場合は時間差でDOMを削除
 				setTimeout(()=>{
 					modal.remove();
 				},1000);
@@ -87,11 +89,15 @@
 	});
 
 	// youtube用モーダルクリック処理
-	document.getElementById('testClick').addEventListener('click',()=>{
-		const modalYoutube = document.getElementById('modal--youtube');
+	document.getElementById('testClick').addEventListener('click',(e)=>{
+		const modalYoutube = document.getElementById('modal--youtube'),
+		getMovieNumber = e.target.dataset.movieNumber;
 		modalYoutube.style.display = 'block';
 		modalYoutube.classList.add('fadeIn');
-		movie();
+		movie(getMovieNumber);
+		
+		//console.log(getMovieNumber);
+		//console.log(player);
 	});
 
 	// モーダル削除時のクリック処理

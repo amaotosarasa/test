@@ -3,7 +3,7 @@
 	 * youtubeAPI function化
 	 */
 	let player;
-	const movie = (movieNum)=>{
+	const movie = ()=>{
 		const tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";
 		let firstScriptTag = document.getElementsByTagName('script')[0];
@@ -14,7 +14,7 @@
 			player = new YT.Player('player', {
 				height: '360',
 				width: '640',
-				videoId: movieNum,
+				videoId: 'OG0ZV8SJcNQ',
 			});
 		};
 	};
@@ -89,16 +89,16 @@
 	});
 
 	// youtube用モーダルクリック処理
-	document.getElementById('testClick').addEventListener('click',(e)=>{
-		const modalYoutube = document.getElementById('modal--youtube'),
-		getMovieNumber = e.target.dataset.movieNumber;
-		modalYoutube.style.display = 'block';
-		modalYoutube.classList.add('fadeIn');
-		movie(getMovieNumber);
-		
-		//console.log(getMovieNumber);
-		//console.log(player);
+	const youtubeBtn = document.querySelectorAll('.youtube--btn');
+	youtubeBtn.forEach(element => {
+		element.addEventListener('click',()=>{
+			const modalYoutube = document.getElementById('modal--youtube');
+			modalYoutube.style.display = 'block';
+			modalYoutube.classList.add('fadeIn');
+			movie();
+		});
 	});
+
 
 	// モーダル削除時のクリック処理
 	// 動的処理のDOM要素なので全体にクリック処理をかける。

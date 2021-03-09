@@ -2,7 +2,31 @@
 	/**
 	 * youtubeAPI function化
 	 */
-	let player;
+
+	/**
+	 * 次の作業時に確認
+	 https://www.notion.so/youtube-5823377062844016ae8b18bd5e8d9bb8
+	 */
+
+	// 動画管ID管理用データ
+	const
+		YTdata = [
+		{
+			id : 'OG0ZV8SJcNQ',
+			movienumber : 'player01'
+		},
+		{
+			id : 'HTLfSU8JfwY',
+			movienumber : 'player02'
+		},
+		{
+			id : 'WUFLQRvqxDA',
+			movienumber : 'player03'
+		}
+	],
+		MaxYTdata = YTdata.length;
+
+	let player = [];
 	const movie = ()=>{
 		const tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";
@@ -11,11 +35,14 @@
 
 		// youtube用動画パラメーター
 		window.onYouTubeIframeAPIReady = ()=> {
-			player = new YT.Player('player', {
-				height: '360',
-				width: '640',
-				videoId: 'OG0ZV8SJcNQ',
-			});
+			// 複数のyoutube用インスタンスの作成
+			for(let i = 0; i < MaxYTdata; i++){
+				player[i] = new YT.Player(YTdata[i].movienumber, {
+					height: '360',
+					width: '640',
+					videoId: YTdata[i].id,
+				});
+			}
 		};
 	};
 
@@ -91,8 +118,11 @@
 	// youtube用モーダルクリック処理
 	const youtubeBtn = document.querySelectorAll('.youtube--btn');
 	youtubeBtn.forEach(element => {
-		element.addEventListener('click',()=>{
-			const modalYoutube = document.getElementById('modal--youtube');
+		element.addEventListener('click',(e)=>{
+			const
+				modalYoutube = document.getElementById('modal--youtube'),
+				getMovieNumber = e.target.dataset.movieNumber;
+				
 			modalYoutube.style.display = 'block';
 			modalYoutube.classList.add('fadeIn');
 			movie();

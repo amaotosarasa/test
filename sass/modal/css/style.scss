@@ -130,6 +130,9 @@
 #modal--youtube{
 	display: none;
 	@extend .modal;
+	.youtube__inr > [id^="player"]{
+		display: none;
+	}
 }
 
 // ==============================================================

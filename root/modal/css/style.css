@@ -114,6 +114,9 @@
 #modal--youtube{
 	display: none;
 }
+#modal--youtube .youtube__inr > [id^="player"]{
+	display: none;
+}
 
 @-webkit-keyframes fadeAnime{
 	0%{

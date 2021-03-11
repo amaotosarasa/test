@@ -121,8 +121,8 @@
 			const
 				modalYoutube = document.getElementById('modal--youtube'),
 				getMovieNumber = e.target.dataset.movieNumber;
-				index = YTdata.findIndex(({id}) => id === getMovieNumber);
-				document.getElementById(YTdata[index].movienumber).style.display = 'block';
+			index = YTdata.findIndex(({id}) => id === getMovieNumber);
+			document.getElementById(YTdata[index].movienumber).style.display = 'block';
 			modalYoutube.style.display = 'block';
 			modalYoutube.classList.add('fadeIn');
 		});

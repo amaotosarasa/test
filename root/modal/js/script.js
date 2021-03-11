@@ -1,12 +1,5 @@
-
-	/**
-	 * youtubeAPI function化
-	 */
-
-	/**
-	 * 次の作業時に確認
-	 https://www.notion.so/youtube-5823377062844016ae8b18bd5e8d9bb8
-	 */
+(function(){
+	'use strict';
 
 	// 動画管ID管理用データ
 	const
@@ -23,10 +16,13 @@
 			id : 'WUFLQRvqxDA',
 			movienumber : 'player03'
 		}
-	],
-		MaxYTdata = YTdata.length;
-
+	];
+	const MaxYTdata = YTdata.length;
 	let player = [];
+
+	/**
+	 * youtubeのAPIをDOMに挿入し、YTdataに記載されてデータから動画操作用のインスタンスを作成
+	 */
 	const movie = ()=>{
 		const tag = document.createElement('script');
 		tag.src = "https://www.youtube.com/iframe_api";
@@ -45,9 +41,8 @@
 			}
 		};
 	};
+	movie();
 
-(function(){
-	'use strict';
 	/**
 	 * モーダル出現ポップアップ時の作成処理
 	 * ClickEle クリックイベントの引数を受け取りsrcとaltを読み込む
@@ -86,16 +81,19 @@
 			target.getAttribute('class');
 			if(target.getAttribute('class') === 'modal__bg' || target.getAttribute('class') === 'modal--close'){
 				// 取得したクラスがmodal__bgもしくはmodal--closeであれば処理を開始
-				// モーダルの削除
+
+				// アクションを起こすモーダル要素を判定
+				// youtube動画の場合は非表示
+				// 通常モーダルの場合は要素を削除する。
 				const modal = document.getElementsByClassName('modal')[0] || document.getElementById('modal--youtube');
 				
-				// CSSアニメーション後に時間差で要素を削除
+				// モーダル非表示処理
 				modal.classList.add('fadeIn--rev');
 				if(modal === document.getElementById('modal--youtube')){
 					modal.style.display = 'none';
-					modal.classList.remove('fadeIn','fadeIn--rev');
-					movie();
-					player.pauseVideo(); // 動画一時停止
+					modal.classList.remove('fadeIn--rev','fadeIn');
+					document.getElementById(YTdata[index].movienumber).style.display = 'none';
+					player[index].pauseVideo(); // 動画一時停止
 					// ポップしたモーダルが、youtubeの場合はここで処置が終了
 					return false;
 				}
@@ -117,18 +115,18 @@
 
 	// youtube用モーダルクリック処理
 	const youtubeBtn = document.querySelectorAll('.youtube--btn');
+	let index; // クリックされた要素から取得したdata属性をものに番号を取得し格納する。
 	youtubeBtn.forEach(element => {
 		element.addEventListener('click',(e)=>{
 			const
 				modalYoutube = document.getElementById('modal--youtube'),
 				getMovieNumber = e.target.dataset.movieNumber;
-				
+				index = YTdata.findIndex(({id}) => id === getMovieNumber);
+				document.getElementById(YTdata[index].movienumber).style.display = 'block';
 			modalYoutube.style.display = 'block';
 			modalYoutube.classList.add('fadeIn');
-			movie();
 		});
 	});
-
 
 	// モーダル削除時のクリック処理
 	// 動的処理のDOM要素なので全体にクリック処理をかける。

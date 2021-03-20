@@ -3,45 +3,44 @@
 /* # ************************************************************
 * resrt
 * **************************************************************/
-html {
-	font-size: 62.5%;
+html{
+	font-size: 62.5%; 
 	color: #333;
 }
 
-input[type="text"] {
+input[type="text"]{
 	padding: 2px;
 	font: menu;
 	border: solid #aaa 1px;
 	border-radius: 15px;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus{
 	outline: none;
 }
 
-img {
+img{
 	max-width: 100%;
 	vertical-align: bottom;
 }
 
-ul {
+ul{
 	list-style: none;
 }
 
 /* # ************************************************************
 * title
 * **************************************************************/
-.titleArea {
-	margin-top: 60px;
+.titleArea{
+	margin-top: 30px;
 }
-
-.titleArea__inr {
+.titleArea__inr{
 	max-width: 1024px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
-
-.titleArea__inr .tllvl1--boder {
-	border-style: solid;
+.titleArea__inr .tllvl1--boder{
+	border-style: solid; 
 	border-bottom: solid 1px;
 	-webkit-border-image: -webkit-gradient(linear, left top, right top, color-stop(40%, #0089ff), color-stop(0%, #333)) 1/0 0 1px 0;
 	-webkit-border-image: -webkit-linear-gradient(left, #0089ff 40%, #333 0%) 1/0 0 1px 0;
@@ -53,29 +52,29 @@ ul {
 .tllvl1,
 .tllvl2,
 .tllvl3,
-.tllvl4 {
-	font-weight: bold;
+.tllvl4{
+	font-weight: bold; 
 	line-height: 1.5;
 }
 
-.tllvl1 {
-	padding-bottom: 8px;
+.tllvl1{
+	padding-bottom: 8px; 
 	font-size: 2.4rem;
 }
 
-.tllvl2 {
+.tllvl2{
 	font-size: 1.8rem;
 }
 
-.tllvl3 {
+.tllvl3{
 	font-size: 1.6rem;
 }
 
-.tllvl4 {
+.tllvl4{
 	font-size: 1.4rem;
 }
 
-.tll--btLine {
+.tll--btLine{
 	padding-bottom: 0.5rem;
 	border-bottom: solid 1px #aaa;
 }
@@ -83,29 +82,38 @@ ul {
 /* # ************************************************************
 * title
 * **************************************************************/
-.section01 {
-	margin-top: 60px;
+.section01{
+	margin-top: 30px;
 }
-
-.section01 .section_inr {
+.section01 .section_inr{
 	max-width: 1024px;
 	margin: 0 auto;
+	padding: 0 calc( 20 / 375 * 100%);
 }
 
-.section02 {
+.section02{
 	margin-top: 45px;
 }
-
-.section02 .section_inr {
+.section02 .section_inr{
 	max-width: 1024px;
 	margin: 0 auto;
 }
 
-.section02 {
-	margin-top: 45px;
+.section03{
+	margin-top: 30px;
 }
 
-.section02 .section_inr {
-	max-width: 1024px;
-	margin: 0 auto;
+@media (min-width: 641px){
+	.titleArea{
+		margin-top: 60px;
+	}
+	.titleArea__inr{
+		padding: 0;
+	}
+	.section01{
+		margin-top: 60px;
+	}
+	.section01 .section_inr{
+		padding: 0;
+	}
 }

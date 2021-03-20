@@ -3,6 +3,7 @@
 /* # ************************************************************
 * resrt
 * **************************************************************/
+
 html{
 	color: #333;
 	font-size: 62.5%;
@@ -27,11 +28,19 @@ ul{
 /* # ************************************************************
 * title
 * **************************************************************/
+
 .titleArea{
-	margin-top: 60px;
+	margin-top: 30px;
+	@media (min-width:641px) {
+		margin-top: 60px;
+	}
 	&__inr{
 		max-width: 1024px;
 		margin: 0 auto;
+		padding: 0 20px;
+		@media (min-width:641px) {
+			padding: 0;
+		}
 		.tllvl1--boder{
 			border-bottom: solid 1px;
 			border-image: linear-gradient(to right, #0089ff 40%, #333 0%) 1/0 0 1px 0;
@@ -68,14 +77,21 @@ ul{
 /* # ************************************************************
 * title
 * **************************************************************/
+
 .section01{
-	margin-top: 60px;
+	margin-top: 30px;
+	@media (min-width:641px) {
+		margin-top: 60px;
+	}
 	.section_inr{
 		max-width: 1024px;
 		margin: 0 auto;
+		padding: 0 calc( 20 / 375 * 100% );
+		@media (min-width:641px) {
+			padding: 0;
+		}
 	}
 }
-
 .section02{
 	margin-top: 45px;
 	.section_inr{
@@ -83,11 +99,6 @@ ul{
 		margin: 0 auto;
 	}
 }
-
-.section02{
-	margin-top: 45px;
-	.section_inr{
-		max-width: 1024px;
-		margin: 0 auto;
-	}
+.section03{
+	margin-top: 30px;
 }

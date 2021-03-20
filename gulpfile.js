@@ -8,6 +8,7 @@ let replace = require('gulp-replace');
 let postcss = require('gulp-postcss');
 let autoprefixer = require('autoprefixer');
 let csscomb = require('gulp-csscomb');
+let mqpacker = require('css-mqpacker');
 
 sass.compiler = require('node-sass');
 
@@ -15,16 +16,17 @@ sass.compiler = require('node-sass');
 gulp.task('sass', function () {
 	return gulp.src('sass/**/*.scss')
 		.pipe(sass({
-			outputStyle: 'expanded'
+			outputStyle: 'compac' // コメント削除のため圧縮形式で出力 cssconbでフォーマットは整形
 		}).on('error', sass.logError))
 		.pipe(replace(/@charset "UTF-8";/g, '')) // charsetの検索
-		.pipe(header('@charset "UTF-8";\n\n'))　// charsetの挿入
+		.pipe(header('@charset "UTF-8";\n\n')) // charsetの挿入
 		.pipe(postcss([
 			autoprefixer({
 			cascade: false
 			})
 		]))
-		.pipe(csscomb())
+		.pipe(csscomb()) // CSS整形
+		.pipe(postcss([mqpacker()])) // メディアクエリをまとめる
 		.pipe(gulp.dest('root/'));
 });
 

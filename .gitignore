@@ -4,3 +4,4 @@ root/autoHeight/.DS_Store
 .gitignore
 work-test.code-workspace
 yarn-error.log
+yarn.lock

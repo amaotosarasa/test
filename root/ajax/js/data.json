@@ -1,0 +1,28 @@
+{
+	"servant":[
+		{
+			"name":"カーマ",
+			"class":"Assassin",
+			"rarity":5,
+			"img":"/ajax/img/img_001.jpg"
+		},
+		{
+			"name":"楊貴妃",
+			"class":"Moon Cancer",
+			"rarity":5,
+			"img":"/ajax/img/img_003.jpg"
+		},
+		{
+			"name":"シャルロット・コルデー",
+			"class":"Assassin",
+			"rarity":1,
+			"img":"/ajax/img/img_002.jpg"
+		},
+		{
+			"name":"宇津見エリセ",
+			"class":"lancer",
+			"rarity":4,
+			"img":"/ajax/img/img_004.jpg"
+		}
+	]
+}

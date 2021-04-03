@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+//  # ************************************************************
+// layout
+// **************************************************************/
+
+.servant{
+	display: flex;
+	padding: 15px;
+	font-size: 1.6rem;
+	border-top: 1px solid #ddd;
+	&__img{
+		max-width: 200px;
+	}
+	&__info{
+		margin-left: 25px;
+	}
+}

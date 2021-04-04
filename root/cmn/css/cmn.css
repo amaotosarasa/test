@@ -80,27 +80,24 @@ ul{
 }
 
 /* # ************************************************************
-* title
+* section
 * **************************************************************/
 .section01{
 	margin-top: 30px;
-}
-.section01 .section_inr{
-	max-width: 1024px;
-	margin: 0 auto;
-	padding: 0 calc( 20 / 375 * 100%);
 }
 
 .section02{
 	margin-top: 45px;
 }
-.section02 .section_inr{
-	max-width: 1024px;
-	margin: 0 auto;
-}
 
 .section03{
 	margin-top: 30px;
+}
+
+.section_inr{
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0 calc( 20 / 375 * 100%);
 }
 
 @media (min-width: 641px){
@@ -113,7 +110,7 @@ ul{
 	.section01{
 		margin-top: 60px;
 	}
-	.section01 .section_inr{
+	.section_inr{
 		padding: 0;
 	}
 }

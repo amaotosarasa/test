@@ -35,10 +35,17 @@
 	display: none;
 }
 
+.sidecheck01{
+	position: fixed;
+	width: 100%;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
 .close-btn{
 	position: absolute;
-	top: 9%;
-	right: 15px;
+	top: 3%;
+	right: 0;
 	width: 25px;
 	height: 25px;
 	cursor: pointer;
@@ -80,8 +87,9 @@
 	width: 20px;
 	height: 2px;
 	line-height: 1;
+	cursor: pointer; 
 	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg); 
+	transform: rotate(45deg);
 	vertical-align: middle;
 	color: #000;
 	border-radius: 0.1em;
@@ -102,13 +110,14 @@
 
 .sideMune{
 	position: fixed;
+	z-index: 15; 
 	top: 0;
 	left: 100%;
 	width: 25%;
 	height: 100vh;
 	padding: 25px;
 	-webkit-transition: all 0.4s;
-	transition: all 0.4s; 
+	transition: all 0.4s;
 	background: #f8f4e6;
 }
 .sideMune .sideMunelink > li{
@@ -134,9 +143,23 @@
 	color: #061fff;
 }
 
+.sideMune-bg{
+	position: fixed;
+	z-index: 10; 
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+	background: rgba(0, 0, 0, 0.7);
+}
+
 /* チャック時 */
 #sidecheck:checked + .sidecheck01 + .sideMune{
 	left: 75%;
+}
+#sidecheck:checked + .sidecheck01 + .sideMune + .sideMune-bg{
+	display: block;
 }
 
 #sidecheck:checked + .sidecheck01 > .close-btn span:nth-of-type(1){
@@ -151,4 +174,16 @@
 #sidecheck:checked + .sidecheck01 > .close-btn span:nth-of-type(3){
 	-webkit-transform: translateY(-10px) rotate(45deg);
 	transform: translateY(-10px) rotate(45deg);
+}
+
+@media (max-width: 640px){
+	.close-btn{
+		right: calc( 20 / 375 * 100%);
+	}
+	.sideMune{
+		width: 60%;
+	}
+	#sidecheck:checked + .sidecheck01 + .sideMune{
+		left: 40%;
+	}
 }

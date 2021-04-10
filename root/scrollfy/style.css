@@ -1,1 +1,30 @@
 @charset "UTF-8";
+
+/* # ************************************************************
+* Layout
+* **************************************************************/
+/*  */
+.scroll_block{
+	width: 100%;
+	height: 100vh;
+}
+
+/* about */
+.about{
+	background: #fdd;
+}
+
+/* service */
+.service{
+	background: #ddf;
+}
+
+/* access*/
+.access{
+	background: #dfd;
+}
+
+/* contact */
+.contact{
+	background: #dff;
+}

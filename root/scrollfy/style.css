@@ -1,12 +1,35 @@
 @charset "UTF-8";
 
 /* # ************************************************************
+* reset
+* **************************************************************/
+small{
+	font-size: 100%;
+}
+
+/* # ************************************************************
 * Layout
 * **************************************************************/
-/*  */
+/* scroll */
 .scroll_block{
 	width: 100%;
 	height: 100vh;
+}
+
+.flexContents{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-ms-flex-align: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 100%;
+}
+.flexContents .tllvl2{
+	font-size: 4.2rem;
 }
 
 /* about */
@@ -27,4 +50,29 @@
 /* contact */
 .contact{
 	background: #dff;
+}
+
+/* # ************************************************************
+* header
+* **************************************************************/
+.header{
+	padding: 25px 15px;
+}
+.header_inr{
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+/* # ************************************************************
+* footer
+* **************************************************************/
+.footer{
+	padding: 40px 15px;
+	font-size: 1.6rem;
+	color: #fff;
+	background: #333;
+}
+.footer_inr{
+	max-width: 1024px;
+	margin: 0 auto;
 }

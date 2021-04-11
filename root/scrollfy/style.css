@@ -16,6 +16,29 @@ small{
 	height: 100vh;
 }
 
+.pagination{
+	position: fixed;
+	top: 50%; 
+	right: 0;
+	padding: 20px;
+}
+
+.pagination li{
+	margin-bottom: 20px; 
+	list-style-type: none;
+}
+
+.pagination a{
+	display: block;
+	width: 10px; 
+	height: 10px;
+	border: 1px solid #000;
+}
+
+.pagination a.active{
+	background: #000;
+}
+
 .flexContents{
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -33,22 +56,22 @@ small{
 }
 
 /* about */
-.about{
+#about{
 	background: #fdd;
 }
 
 /* service */
-.service{
+#service{
 	background: #ddf;
 }
 
 /* access*/
-.access{
+#access{
 	background: #dfd;
 }
 
 /* contact */
-.contact{
+#contact{
 	background: #dff;
 }
 

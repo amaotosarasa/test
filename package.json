@@ -6,6 +6,7 @@
 	"dependencies": {
 		"autoprefixer": "^10.2.4",
 		"browser-sync": "^2.26.14",
+		"connect-ssi": "^1.1.1",
 		"css-mqpacker": "^7.0.0",
 		"gulp": "^4.0.2",
 		"gulp-changed": "^4.0.2",

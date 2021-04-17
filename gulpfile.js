@@ -1,7 +1,12 @@
 'use strict';
 
 let gulp = require('gulp');
+
+// ローカルサーバー
 let browsersync = require('browser-sync').create();
+let connectSSI   = require('connect-ssi');
+
+// sass　/ css関連
 let sass = require('gulp-sass');
 let header = require('gulp-header');
 let replace = require('gulp-replace');
@@ -40,7 +45,13 @@ gulp.task('sass', function () {
 gulp.task('build-server', function (done) {
 	browsersync.init({
 		server: {
-			baseDir: "root/"
+			baseDir: "root/",
+			middleware: [
+				connectSSI({
+					baseDir: __dirname + '/root/',
+					ext: '.html'
+				})
+			]
 		}
 	});
 	done();

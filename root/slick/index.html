@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>slick</title>
+	<link rel="stylesheet" href="/cmn/css/ress.css">
+	<link rel="stylesheet" href="/cmn/css/slick-theme.css">
+	<link rel="stylesheet" href="/cmn/css/cmn.css">
+	<link rel="stylesheet" href="/slick/css/style.css">
+</head>
+<body>
+
+	<main>
+		<div class="titleArea">
+			<div class="titleArea__inr">
+				<h1 class="tllvl1 tllvl1--boder">slick</h1>
+			</div>
+		</div>
+		<!-- /.titleArea -->
+
+		<section class="section01">
+			<div class="section_inr">
+				<h2 class="tllvl1">slick 01</h2>
+				<ul class="carousel js-carousel01">
+					<li class="carousel-item"><img src="https://placehold.jp/600x250.png?text=01" alt=""></li>
+					<li class="carousel-item"><img src="https://placehold.jp/600x250.png?text=02" alt=""></li>
+					<li class="carousel-item"><img src="https://placehold.jp/600x250.png?text=03" alt=""></li>
+				</ul>
+				<!-- /.carousel -->
+			</div>
+		</section>
+		<!-- /.section01 -->
+
+		<section class="section02">
+			<div class="section_inr">
+				<h2 class="tllvl1">slick 01</h2>
+				<ul class="carousel js-carousel01">
+					<li class="carousel-item"><img src="https://placehold.jp/600x250.png?text=01" alt=""></li>
+				</ul>
+				<!-- /.carousel -->
+			</div>
+		</section>
+		<!-- /.section02 -->
+
+	</main>
+
+	<script src="/cmn/js/jquery-3.6.0.min.js"></script>
+	<script src="/cmn/js/slick.min.js"></script>
+	<script>
+		console.log('ああああ');
+		$(function(){
+			$('.js-carousel01').slick({
+				speed: 500,
+				autoplay: true,
+				pauseOnHover: true,
+				dots: true,
+				prevArrow: '<button class="slide-arrow prev-arrow">prev-arrow</button>',
+				nextArrow: '<button class="slide-arrow next-arrow">next-arrow</button>'
+			});
+		});
+	</script>
+</body>
+</html>

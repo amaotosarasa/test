@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* # ************************************************************
+* carousel
+* **************************************************************/
+
+.carousel{
+	max-width: 600px;
+	margin: 0 auto;
+	overflow: hidden;
+	.carousel-item{
+		display: inline-block;
+	}
+}
+.slide-arrow{
+	font-size: 1.8em;
+}
+.slick-dots{
+	position: static;
+	max-width: 600px;
+}

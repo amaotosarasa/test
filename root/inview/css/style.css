@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+
+/* ----------------------------------------------------
+# common
+* ---------------------------------------------------*/
+.clearfix::after{
+	display: block;
+	clear: both; 
+	content: "";
+}
+
+/* 背景色 */
+[Class*="bg"]{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.bgRed{
+	background-color: #ffe0e6;
+}
+
+.bgBlue{
+	background-color: #c6e9ff;
+}
+
+/* ----------------------------------------------------
+# text
+* ---------------------------------------------------*/
+.tllvl1{
+	font-size: 3.8em;
+}
+
+.tllvl2{
+	font-size: 2.8em;
+}
+
+.txtType01{
+	font-size: 1.6em;
+	line-height: 1.6;
+}
+
+/* ----------------------------------------------------
+# header
+* ---------------------------------------------------*/
+.header{
+	position: fixed;
+	z-index: 999; 
+	top: 0;
+	width: 100%;
+	background-color: #FFF;
+}
+
+.header_our{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.header_our > li.btn_item{
+	width: calc(100% / 3);
+	padding: 15px 0;
+	font-size: 1.4rem;
+	text-align: center;
+	border: solid 1px #ddd;
+}
+
+.head_btn > label{
+	display: block;
+}
+
+.head_link{
+	width: 100%;
+}
+.head_link .head_link_item{
+	text-align: center;
+}
+.head_link .head_link_item > a{
+	display: block;
+	padding: 8px;
+	font-size: 1.4em;
+	text-decoration: none;
+	color: #333;
+	border-top: solid 1px #ddd;
+}
+.head_link .head_link_item > a:last-child{
+	border-top: none;
+}
+.head_link .head_link_item > a:last-child{
+	border-bottom: solid 1px #ddd;
+}
+
+.head_item{
+	position: absolute;
+	top: 53px;
+	left: 0;
+	display: none;
+	overflow-y: auto; 
+	width: 100%;
+	height: 400px;
+}
+
+.head_link_out{
+	-webkit-transition: 1s;
+	transition: 1s;
+	opacity: 0;
+	background-color: #FFF;
+}
+
+.hbg_check[type="checkbox"]{
+	display: none;
+}
+.hbg_check[type="checkbox"]:checked + .head_item{
+	display: block;
+	opacity: 1;
+}
+.hbg_check[type="checkbox"]:checked + .head_item .head_link_out{
+	display: block;
+	opacity: 1;
+}
+
+.head-bg{
+	position: fixed;
+	z-index: 980; 
+	top: 0;
+	right: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100vh;
+	border: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ----------------------------------------------------
+# footer
+* ---------------------------------------------------*/
+.footer{
+	padding: 40px;
+	background-color: #333;
+}
+.footer .footer_inr{
+	max-width: 1024px;
+	margin: 0 auto;
+	color: #FFF;
+}
+.footer small{
+	font-size: 1.4rem;
+}
+
+/* ----------------------------------------------------
+# layout
+* ---------------------------------------------------*/
+/* mv */
+.mv_area .movei{
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* 画像 + テキスト */
+.txtImg_clm{
+	margin-top: 30px;
+}
+.txtImg_clm .txt_area{
+	float: left; 
+	width: calc(50% - 20px);
+}
+.txtImg_clm .txt_area .tllvl3{
+	margin-bottom: 1em;
+}
+.txtImg_clm .txt_area.reverse{
+	float: right;
+}
+.txtImg_clm .img{
+	float: right; 
+	width: calc(50% - 20px);
+}
+.txtImg_clm .img.reverse{
+	float: left;
+}
+
+/* news_area */
+.news_area{
+	position: relative;
+	overflow: hidden; 
+	width: 100%;
+	max-width: 800px;
+	height: 60px;
+	margin: 0 auto;
+	padding: 10px;
+	border: solid 2px #333;
+	border-radius: 8px;
+}
+
+.news_list{
+	position: absolute;
+	top: 0;
+}
+.news_list .news_item{
+	margin-top: 20px;
+}
+.news_list .news_item:first-child{
+	margin-top: 0;
+}
+
+.news_letter{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 10px; 
+	font-size: 1.4em;
+}
+.news_letter .news_date{
+	font-weight: bold;
+}
+.news_letter .news_txt{
+	padding-left: 2em;
+}
+.news_letter .news_txt > a{
+	text-decoration: none;
+}
+.news_letter .news_txt > a:hover{
+	text-decoration: underline;
+}
+
+/* ----------------------------------------------------
+# animation
+* ---------------------------------------------------*/
+.fade{
+	-webkit-transition: 1.2s;
+	transition: 1.2s;
+	-webkit-transform: translateY(100px);
+	transform: translateY(100px); 
+	opacity: 0;
+}
+
+.fade-in{
+	-webkit-transform: translateY(0);
+	transform: translateY(0); 
+	opacity: 1;
+}

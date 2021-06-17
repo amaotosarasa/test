@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/cmn/css/ress.css">
+	<link rel="stylesheet" href="/cmn/css/cmn.css">
+	<link rel="stylesheet" href="/inview/css/style.css">
+</head>
+<body>
+	<main>
+		<section class="section01">
+			<div class="section_inr">
+				<h1 class="tllvl1">inview test</h1>
+				<div class="mv_area">
+					<video class="movei" controls controlslist loop autoplay mute>
+						<source src='/inview/img/movie.mp4' type='video/mp4;'>
+						<p>動画を再生するには、videoタグをサポートしたブラウザが必要です。</p>
+					</video>
+				</div>
+				<!-- /.mv_area -->
+			</div>
+		</section>
+		<section class="section02 bgRed">
+			<div class="section_inr">
+				<h2 class="tllvl2">inview01</h2>
+				<div class="txtImg_clm clearfix fade">
+					<div class="txt_area">
+						<h3 class="tllvl3">inview01 コンテンツ</h3>
+						<p class="txtType01">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+					</div>
+					<div class="img"><img src="/inview/img/img_01.jpg" alt="ダミーテキス"></div>
+				</div>
+			</div>
+		</section>
+		<section class="section02 bgBlue">
+			<div class="section_inr">
+				<h2 class="tllvl2">inview02</h2>
+				<div class="txtImg_clm clearfix fade">
+					<div class="img reverse"><img src="/inview/img/img_01.jpg" alt="ダミーテキス"></div>
+					<div class="txt_area reverse">
+						<h3 class="tllvl3">inview02 コンテンツ</h3>
+						<p class="txtType01">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section02 bgRed">
+			<div class="section_inr">
+				<h2 class="tllvl2">inview03</h2>
+				<div class="txtImg_clm clearfix fade">
+					<div class="txt_area">
+						<h3 class="tllvl3">inview03 コンテンツ</h3>
+						<p class="txtType01">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+					</div>
+					<div class="img"><img src="/inview/img/img_01.jpg" alt="ダミーテキス"></div>
+				</div>
+			</div>
+		</section>
+		<section class="section02 bgBlue">
+			<div class="section_inr">
+				<h2 class="tllvl2">inview04</h2>
+				<div class="txtImg_clm clearfix fade">
+					<div class="txt_area reverse">
+						<h3 class="tllvl3">inview04 コンテンツ</h3>
+						<p class="txtType01">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
+					</div>
+					<div class="img reverse"><img src="/inview/img/img_01.jpg" alt="ダミーテキス"></div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="footer_inr">
+			<small>&#169;&#65038;copyright</small>
+		</div>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="/inview/js/jquery.inview.min.js"></script>
+	<script>
+		$(function(){
+			$(function() {
+				$('.fade').on('inview', function(event, isInView){
+					if (isInView) {
+						$(this).addClass('fade-in');
+					}
+				});
+	});
+		});
+	</script>
+</body>
+</html>

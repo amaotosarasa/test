@@ -135,6 +135,7 @@
 # footer
 * ---------------------------------------------------*/
 .footer{
+	margin-top: 60px;
 	padding: 40px;
 	background-color: #333;
 }
@@ -220,6 +221,29 @@
 }
 .news_letter .news_txt > a:hover{
 	text-decoration: underline;
+}
+
+/* slide */
+.slide{
+	max-width: 640px;
+	margin: 0 auto;
+}
+.slide li{
+	display: inline-block;
+}
+.slide .slick-slide{
+	-webkit-transition: opacity 2000ms ease 0s !important;
+	transition: opacity 2000ms ease 0s !important;
+}
+
+.slider{
+	overflow: hidden; 
+	max-width: 800px;
+	margin: 0 auto;
+}
+.slider li{
+	display: inline-block;
+	margin-left: 50px;
 }
 
 /* ----------------------------------------------------

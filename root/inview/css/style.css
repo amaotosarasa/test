@@ -224,6 +224,10 @@
 }
 
 /* slide */
+.slick-list{
+	overflow: hidden;
+}
+
 .slide{
 	max-width: 640px;
 	margin: 0 auto;
@@ -237,7 +241,6 @@
 }
 
 .slider{
-	overflow: hidden; 
 	max-width: 800px;
 	margin: 0 auto;
 }

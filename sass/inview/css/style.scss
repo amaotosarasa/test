@@ -195,6 +195,9 @@
 	}
 }
 /* slide */
+.slick-list{
+	overflow: hidden;
+}
 .slide{
 	max-width: 640px;
 	margin: 0 auto;
@@ -208,7 +211,6 @@
 .slider{
 	max-width: 800px;
 	margin: 0 auto;
-	overflow: hidden;
 	li{
 		display: inline-block;
 		margin-left: 50px;

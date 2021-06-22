@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>youtube</title>
+	<link rel="stylesheet" href="/cmn/css/ress.css">
+	<link rel="stylesheet" href="/cmn/css/cmn.css">
+	<link rel="stylesheet" href="/cmn/css/slick-theme.css">
+	<link rel="stylesheet" href="/youtube/css/style.css">
+</head>
+<body>
+	<main>
+		<section class="section01">
+			<div class="section_inr">
+				<div class="slider">
+					<ul class="youtube_list">
+						<li class="youtube_item"><div class="youtube"><div id="player01"></div></div></li>
+						<li class="youtube_item"><div class="youtube"><div id="player02"></div></div></li>
+						<li class="youtube_item"><div class="youtube"><div id="player03"></div></div></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- /.section01 -->
+	</main>
+
+	<script src="/cmn/js/jquery-3.6.0.min.js"></script>
+	<script src="/cmn/js/slick.min.js"></script>
+	<script>
+		// youtube 埋めこみ
+		let tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		let firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		const ytPlayer = [];
+		const ytData = [
+				{ id:'player01',movieId:'hUD0W8K9ayk'},
+				{ id:'player02',movieId:'sW7y5GYQjow'},
+				{ id:'player03',movieId:'ffjzxnvSA0M'}
+			];
+		
+		function onYouTubeIframeAPIReady(){
+			for (let i = 0; i < ytData.length; i++) {
+				ytPlayer[i] = new YT.Player(ytData[i]['id'],{
+					height: '360',
+					width: '640',
+					videoId: ytData[i]['movieId'],
+					origin: location.protocol + '//' + location.hostname + "/",
+				});
+			}
+		}
+
+		/**
+		 * 再生中の動画を一時停止
+		*/
+		const allStopVideos = ()=>{
+			for(let i =0;i < ytData.length; i++){
+					ytPlayer[i].pauseVideo();
+				}
+		}
+
+		/**
+		 * @param {number} count 表示されている動画の番号
+		 * 現在表示されている動画を判定する処理
+		 * counterに代入されている数字のインデックス番号の動画が再生表示されている。
+		*/
+		let counter = 0;
+		const counterCheck = (count)=>{
+			if(count >= ytData.length){
+				counter = 0;
+			}else if(count<0){
+				counter = ytData.length-1;
+			}
+		}
+
+		/**
+		 * @param {number} movieIndex 引数の番号の埋めこみ動画が一時停止の状態であれば再生する。
+		*/
+		const moveiPauseVideoCheck = (movieIndex)=>{
+			if(ytPlayer[movieIndex].getPlayerState()===2){
+				ytPlayer[movieIndex].playVideo();
+			}
+		}
+
+		document.addEventListener('click',function(e){
+			const target = e.target;
+			// スライダーのボタンをクリックしたら再生中のyoutubeを停止
+			if(target.classList.contains('slick_previous') || target.classList.contains('slick_next')){
+				allStopVideos();
+			}
+			if(target.classList.contains('slick_previous')){
+				counter--
+				counterCheck(counter);
+				moveiPauseVideoCheck (counter);
+			}else if(target.classList.contains('slick_next')){
+				counter++
+				counterCheck(counter);
+				moveiPauseVideoCheck (counter);
+			}
+		});
+
+		$(function(){
+			$('.youtube_list').slick({
+				infinite: true,
+				speed: 300,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				prevArrow: '<div class="slick_previous"></div>',
+				nextArrow: '<div class="slick_next"></div>',
+			});
+		});
+
+	</script>
+</body>
+</html>
